@@ -3,15 +3,19 @@ import Button from "../button/Button";
 import "./Input.css";
 
 export interface InputProps {
+	id: string;
 	value: string;
 	onChange: (value: string) => void;
 	isPassword?: boolean;
+	placeholder?: string;
 }
 
 export const Input: React.FC<InputProps> = ({
 	value,
 	onChange,
 	isPassword,
+	placeholder,
+	id,
 }) => {
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -22,9 +26,11 @@ export const Input: React.FC<InputProps> = ({
 	return (
 		<div className="input-container">
 			<input
+				id={id}
 				type={isPassword && !showPassword ? "password" : "text"}
 				value={value}
 				onChange={handleChange}
+				placeholder={placeholder}
 			/>
 			{isPassword && (
 				<Button

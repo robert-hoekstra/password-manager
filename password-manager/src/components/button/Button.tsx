@@ -2,7 +2,7 @@ import React from "react";
 import "./Button.css";
 
 type ButtonProps = {
-	action: () => void;
+	action: (e: React.MouseEvent) => void;
 	text: string;
 	type: "button" | "submit" | "reset";
 };

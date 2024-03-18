@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 const ClientData: React.FC = () => {
 	const [data, setData] = useState<any>(null);
@@ -8,8 +7,8 @@ const ClientData: React.FC = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get("https://pastebin.com/raw/zSFTiVWr");
-				const jsonData = response.data;
+				const response = await fetch("https://pastebin.com/raw/zSFTiVWr");
+				const jsonData = await response.json();
 				setData(jsonData);
 				setLoading(false);
 			} catch (error) {

@@ -8,6 +8,7 @@ describe("Input component", () => {
 			<Input
 				value=""
 				onChange={() => {}}
+				id={""}
 			/>
 		);
 		const inputElement = screen.getByLabelText("input");
@@ -20,6 +21,7 @@ describe("Input component", () => {
 			<Input
 				value=""
 				onChange={handleChange}
+				id={""}
 			/>
 		);
 		const inputElement = screen.getByLabelText("input");
@@ -33,6 +35,7 @@ describe("Input component", () => {
 				value=""
 				onChange={() => {}}
 				isPassword={true}
+				id={""}
 			/>
 		);
 		const inputElement = screen.getByLabelText("input");

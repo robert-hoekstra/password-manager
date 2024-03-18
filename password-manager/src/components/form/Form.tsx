@@ -1,21 +1,21 @@
 import React, { ReactNode } from "react";
 import Button from "../button/Button";
 
-type FormProps = {
+export type FormProps = {
 	children: ReactNode;
-	onSubmit: () => void;
+	onSubmit: (event: React.FormEvent) => void; // Update the onSubmit prop to accept an event parameter
 };
 
-const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
+export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
 	const handleSubmit = (event: React.FormEvent) => {
 		event.preventDefault();
-		onSubmit();
+		onSubmit(event); // Pass the event parameter to the onSubmit function
 	};
 
 	return (
 		<form onSubmit={handleSubmit}>
 			{children}
-			<button type="submit">Submit</button>
+
 			<Button
 				action={onSubmit}
 				text="Submit"

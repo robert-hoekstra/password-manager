@@ -10,6 +10,7 @@ describe("Button", () => {
 			<Button
 				action={mockAction}
 				text={buttonText}
+				type="button"
 			/>
 		);
 		const button = getByText(buttonText);

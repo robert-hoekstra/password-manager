@@ -4,6 +4,7 @@ import "./Button.css";
 type ButtonProps = {
 	action: () => void;
 	text: string;
+	type: "button" | "submit" | "reset";
 };
 
 const Button: React.FC<ButtonProps> = ({ action, text }) => {

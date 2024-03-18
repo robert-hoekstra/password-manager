@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import Button from "../button/Button";
 import "./Input.css";
 
-interface InputProps {
+export interface InputProps {
 	value: string;
 	onChange: (value: string) => void;
 	isPassword?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ value, onChange, isPassword }) => {
+export const Input: React.FC<InputProps> = ({
+	value,
+	onChange,
+	isPassword,
+}) => {
 	const [showPassword, setShowPassword] = useState(false);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

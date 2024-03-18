@@ -1,9 +1,9 @@
 import React from "react";
 
-interface ListItemProps {
+export interface ListItemProps {
 	text: string;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ text }) => {
+export const ListItem: React.FC<ListItemProps> = ({ text }) => {
 	return <li>{text}</li>;
 };

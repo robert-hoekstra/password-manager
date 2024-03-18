@@ -1,10 +1,10 @@
 import React from "react";
 
-interface ListProps {
+export interface ListProps {
 	children: React.ReactNode;
 }
 
-const List: React.FC<ListProps> = ({ children }) => {
+export const List: React.FC<ListProps> = ({ children }) => {
 	return <ul>{children}</ul>;
 };
 

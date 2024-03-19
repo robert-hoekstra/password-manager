@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-	AppState,
 	PasswordContext,
 	PasswordWithTitle,
+	AppState,
 } from "./password-context";
 
 interface Props {
@@ -12,21 +12,19 @@ interface Props {
 export const PasswordContextProvider: React.FunctionComponent<Props> = (
 	props: Props
 ): JSX.Element => {
-	/**
-	 * Using react hooks, set the default state
-	 */
-	const [state, setState] = useState({
-		passwords: [{ title: "Benu", password: "1234" }],
-		addPassword: (newPassword: PasswordWithTitle) => {
-			setState({ ...state, passwords: [...state.passwords, newPassword] });
-		},
-	});
+	const initialState: AppState = JSON.parse(
+		localStorage.getItem("passwordContextState") ||
+			'{"passwords":[{"title":"PlaceholderTitle","password":"PlaceholderPassword"}]}'
+	);
 
-	/**
-	 * Declare the update state method that will handle the state values
-	 */
+	const [state, setState] = useState(initialState);
+
+	useEffect(() => {
+		localStorage.setItem("passwordContextState", JSON.stringify(state));
+	}, [state]);
+
 	const updateState = (newState: Partial<AppState>) => {
-		setState({ ...state, ...newState });
+		setState(prevState => ({ ...prevState, ...newState }));
 	};
 
 	const addPassword = (newPassword: PasswordWithTitle) => {

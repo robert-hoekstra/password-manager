@@ -2,9 +2,6 @@ import React, { useContext } from "react";
 import Input from "../../components/input/Input";
 import Form from "../../components/form/Form";
 import { PasswordContext } from "../../app-context/password-context";
-import Navigation from "../../components/navigation/Navigation";
-
-const formElements = {};
 
 const AddPasswordPage: React.FC = () => {
 	const [title, setTitle] = React.useState("");
@@ -19,7 +16,6 @@ const AddPasswordPage: React.FC = () => {
 
 	return (
 		<div className="AddPasswordPage">
-			<Navigation />
 			<h1>Voeg een nieuw wachtwoord toe</h1>
 			<Form onSubmit={handleSubmit}>
 				<label htmlFor="title">Geef jouw wachtwoord een titel</label>

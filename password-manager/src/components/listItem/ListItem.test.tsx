@@ -9,5 +9,3 @@ describe("ListItem", () => {
 		expect(screen.getByText(text)).toBeInTheDocument();
 	});
 });
-
-export {};

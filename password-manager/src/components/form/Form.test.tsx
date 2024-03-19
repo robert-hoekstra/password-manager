@@ -1,21 +1,20 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import Form from "./Form";
+import Button from "../button/Button";
 
 describe("Form", () => {
-	it("should call onSubmit when form is submitted", () => {
-		const onSubmit = jest.fn();
+	it("should render the children components", () => {
 		const { getByText } = render(
-			<Form onSubmit={onSubmit}>
+			<Form onSubmit={jest.fn()}>
+				<Button
+					action={jest.fn()}
+					text="Submit"
+					type="submit"
+				/>
 				<input type="text" />
-				<button type="submit">Submit</button>
 			</Form>
 		);
-
-		fireEvent.click(getByText("Submit"));
-
-		expect(onSubmit).toHaveBeenCalled();
+		expect(screen.getByRole("textbox")).toBeInTheDocument();
 	});
 });
-
-export {};

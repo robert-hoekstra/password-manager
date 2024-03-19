@@ -3,7 +3,7 @@ import Button from "../button/Button";
 
 export type FormProps = {
 	children: ReactNode;
-	onSubmit: (event: React.FormEvent) => void; // Update the onSubmit prop to accept an event parameter
+	onSubmit: (event: React.FormEvent) => void;
 };
 
 export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {

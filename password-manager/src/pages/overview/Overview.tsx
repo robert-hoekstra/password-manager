@@ -10,14 +10,25 @@ const OverviewPage: React.FC = () => {
 			<Navigation />
 			<header className="App-header">
 				<h1>Overview page</h1>
-				<ul>
-					{passwords.map((password, index) => (
-						<li key={index}>
-							<h2>{password.title}</h2>
-							<p>{password.password}</p>
-						</li>
-					))}
-				</ul>
+				{passwords.length > 0 ? (
+					<ul>
+						{passwords.map((password, index) => (
+							<li
+								className={
+									password.client
+										? password.client.replaceAll(" ", "-").toLowerCase()
+										: "default"
+								}
+								key={index}
+							>
+								<h2>{password.title}</h2>
+								<p>{password.password}</p>
+							</li>
+						))}
+					</ul>
+				) : (
+					<p>Please add a password.</p>
+				)}
 			</header>
 		</div>
 	);

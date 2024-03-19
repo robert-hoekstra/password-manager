@@ -46,5 +46,3 @@ describe("Input component", () => {
 		expect(inputElement.getAttribute("type")).toBe("password");
 	});
 });
-
-export {};

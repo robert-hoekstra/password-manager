@@ -8,6 +8,7 @@ export interface InputProps {
 	onChange: (value: string) => void;
 	isPassword?: boolean;
 	placeholder?: string;
+	required?: boolean; // Added required prop
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -16,6 +17,7 @@ export const Input: React.FC<InputProps> = ({
 	isPassword,
 	placeholder,
 	id,
+	required,
 }) => {
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -31,6 +33,7 @@ export const Input: React.FC<InputProps> = ({
 				value={value}
 				onChange={handleChange}
 				placeholder={placeholder}
+				required={required}
 			/>
 			{isPassword && (
 				<Button

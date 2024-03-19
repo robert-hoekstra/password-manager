@@ -10,11 +10,12 @@ export interface UserProfile {
 export interface PasswordWithTitle {
 	title: string;
 	password: string;
+	client?: string;
 }
 
 export interface AppState {
 	user?: UserProfile;
-	passwords: PasswordWithTitle[];
+	passwords: PasswordWithTitle[] | [];
 	updateState: (newState: Partial<AppState>) => void;
 	addPassword: (newPassword: PasswordWithTitle) => void;
 }

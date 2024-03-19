@@ -14,7 +14,7 @@ export const PasswordContextProvider: React.FunctionComponent<Props> = (
 ): JSX.Element => {
 	const initialState: AppState = JSON.parse(
 		localStorage.getItem("passwordContextState") ||
-			'{"passwords":[{"title":"PlaceholderTitle","password":"PlaceholderPassword"}]}'
+			'{"passwords":[{"title":"PlaceholderTitle","password":"PlaceholderPassword", "client":"PlaceholderClient"}]}'
 	);
 
 	const [state, setState] = useState(initialState);

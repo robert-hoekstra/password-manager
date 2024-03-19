@@ -30,7 +30,9 @@ const root = ReactDOM.createRoot(
 root.render(
 	<React.StrictMode>
 		<PasswordContextProvider>
-			<RouterProvider router={router} />
+			<div className="app">
+				<RouterProvider router={router} />
+			</div>
 		</PasswordContextProvider>
 	</React.StrictMode>
 );

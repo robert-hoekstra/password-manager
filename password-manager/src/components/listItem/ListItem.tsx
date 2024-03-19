@@ -1,4 +1,5 @@
 import React from "react";
+import "./ListItem.css";
 
 export interface ListItemProps {
 	text: string;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navigation.css";
 
 export const Navigation: React.FC = () => {
 	const links = [
@@ -7,7 +8,7 @@ export const Navigation: React.FC = () => {
 		{ to: `/overview`, label: `Wachtwoorden bekijken` },
 	];
 	return (
-		<nav>
+		<nav className="navigation">
 			<ul>
 				{links.map((link, index) => (
 					<li key={link.label}>

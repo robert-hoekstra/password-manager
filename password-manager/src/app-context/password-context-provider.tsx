@@ -5,13 +5,13 @@ import {
 	AppState,
 } from "./password-context";
 
-interface Props {
+export interface PasswordProviderProps {
 	children: React.ReactNode;
 }
 
-export const PasswordContextProvider: React.FunctionComponent<Props> = (
-	props: Props
-): JSX.Element => {
+export const PasswordContextProvider: React.FunctionComponent<
+	PasswordProviderProps
+> = (props: PasswordProviderProps): JSX.Element => {
 	const initialState: AppState = JSON.parse(
 		localStorage.getItem("passwordContextState") ||
 			'{"passwords":[{"title":"PlaceholderTitle","password":"PlaceholderPassword", "client":"PlaceholderClient"}]}'

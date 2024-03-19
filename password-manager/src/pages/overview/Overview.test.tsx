@@ -1,12 +1,13 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import OverviewPage from "./Overview";
 
 test("renders overview page with passwords", () => {
 	// Mock the PasswordContext
 	const mockPasswords = [
-		{ title: "Password 1", password: "123456" },
-		{ title: "Password 2", password: "abcdef" },
+		{ title: "wachtwoord", password: "123456" },
+		{ title: "wachtwoord", password: "abcdef" },
 	];
 	jest.mock("../../app-context/password-context", () => ({
 		PasswordContext: {
@@ -15,12 +16,16 @@ test("renders overview page with passwords", () => {
 		},
 	}));
 
-	// Render the component
-	render(<OverviewPage />);
+	// Render the component with MemoryRouter wrapper
+	render(
+		<MemoryRouter>
+			<OverviewPage />
+		</MemoryRouter>
+	);
 
 	// Verify that the passwords are rendered
-	expect(screen.getByText("Password 1")).toBeInTheDocument();
+	expect(screen.getByText("wachtwoord")).toBeInTheDocument();
 	expect(screen.getByText("123456")).toBeInTheDocument();
-	expect(screen.getByText("Password 2")).toBeInTheDocument();
+	expect(screen.getByText("wachtwoord")).toBeInTheDocument();
 	expect(screen.getByText("abcdef")).toBeInTheDocument();
 });

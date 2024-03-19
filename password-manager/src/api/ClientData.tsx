@@ -7,7 +7,16 @@ const ClientData: React.FC = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch("https://pastebin.com/raw/zSFTiVWr");
+				const response = await fetch("https://pastebin.com/raw/zSFTiVWr", {
+					mode: "cors",
+					headers: {
+						"Access-Control-Allow-Origin": "*",
+						"Access-Control-Allow-Credentials": "true",
+						"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+						"Access-Control-Allow-Headers":
+							"Content-Type, Authorization, X-Requested-With",
+					},
+				});
 				const jsonData = await response.json();
 				setData(jsonData);
 				setLoading(false);
@@ -25,7 +34,6 @@ const ClientData: React.FC = () => {
 
 	return (
 		<>
-			{console.log(data)}
 			<div>{JSON.stringify(data)}</div>
 		</>
 	);

@@ -5,7 +5,6 @@ export const Navigation: React.FC = () => {
 	const links = [
 		{ to: `/addPassword`, label: `Wachtwoord toevoegen` },
 		{ to: `/overview`, label: `Wachtwoorden bekijken` },
-		{ to: `/login`, label: `login` },
 	];
 	return (
 		<nav>

@@ -8,7 +8,7 @@ export interface InputProps {
 	onChange: (value: string) => void;
 	isPassword?: boolean;
 	placeholder?: string;
-	required?: boolean; // Added required prop
+	required?: boolean;
 }
 
 export const Input: React.FC<InputProps> = ({

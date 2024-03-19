@@ -9,7 +9,7 @@ export type FormProps = {
 export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
 	const handleSubmit = (event: React.FormEvent) => {
 		event.preventDefault();
-		onSubmit(event); // Pass the event parameter to the onSubmit function
+		onSubmit(event);
 	};
 
 	return (

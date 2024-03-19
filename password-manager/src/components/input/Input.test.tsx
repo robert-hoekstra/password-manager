@@ -47,7 +47,9 @@ describe("Input component", () => {
 				isPassword
 			/>
 		);
-		const inputElement = screen.getByPlaceholderText("Enter password");
+		const inputElement = screen.getByPlaceholderText(
+			"Enter password"
+		) as HTMLInputElement;
 		const showHideButton = screen.getByText("Show");
 
 		fireEvent.click(showHideButton);
